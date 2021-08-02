@@ -1,8 +1,9 @@
 package com.viru.networkserviceexample.modelclasses
 
 import java.util.*
+import javax.sql.StatementEvent
 
-data class Articles(val list: List<ArticleInfo>) {
+data class Articles(val totalResults:Int, val articles: List<ArticleInfo>) {
 
 }
 
@@ -13,7 +14,7 @@ data class ArticleInfo(
     val description: String?,
     val url: String?,
     val urlToImage: String?,
-    val publishesAt: String?,
+    val publishedAt: String?,
     val content: String?
 )
 

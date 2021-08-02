@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface API {
     @GET(EndPoints.topHeadlines)
-    fun getTopHeadlines(): Articles
+    suspend fun getTopHeadlines(): Articles
 }
