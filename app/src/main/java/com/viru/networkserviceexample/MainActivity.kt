@@ -10,6 +10,7 @@ import com.viru.networkserviceexample.viewmodels.NewsViewModel
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: NewsViewModel by viewModels()
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.fetchTopHeadlines()
         viewModel.news.observe(this, Observer {
             if (it != null) {
-                Log.d("Viru1", "message is ${it.articles.size}")
+                Log.d(TAG, "articles count is ${it.articles.size}")
             } else {
-                Log.d("Viru1", "empty")
+                Log.d(TAG, "No articles to show")
             }
         })
     }
